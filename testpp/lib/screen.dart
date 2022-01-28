@@ -99,10 +99,7 @@ Widget createList(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                  title == "Cryptos"
-                                      ? liste.keys.elementAt(index)
-                                      : liste.keys.elementAt(index),
+                              Text(liste.keys.elementAt(index),
                                   style: const TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold)),
@@ -111,25 +108,20 @@ Widget createList(
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Flexible(
-                                      flex: 1,
-                                      child: Transform.rotate(
-                                          angle: (liste.values
-                                                      .elementAt(index)
-                                                      .last >
+                                  Transform.rotate(
+                                      angle:
+                                          (liste.values.elementAt(index).last >
                                                   0)
-                                              ? 180 * (pi / 4) / 180
-                                              : 180 * (2 * pi / 3) / 180,
-                                          child: Icon(
-                                            Icons.arrow_drop_up,
-                                            color: color,
-                                          ))),
-                                  Flexible(
-                                      flex: 1,
-                                      child: Text(
-                                        "${liste.values.elementAt(index).last}%",
-                                        style: TextStyle(color: color),
-                                      ))
+                                              ? pi / 4
+                                              : 2 * pi / 3,
+                                      child: Icon(
+                                        Icons.arrow_drop_up,
+                                        color: color,
+                                      )),
+                                  Text(
+                                    "${liste.values.elementAt(index).last}%",
+                                    style: TextStyle(color: color),
+                                  )
                                 ],
                               )
                             ],

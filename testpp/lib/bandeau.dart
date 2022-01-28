@@ -8,11 +8,12 @@ class BandeauPromotion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _height = MediaQuery.of(context).size.height;
+    final _width = MediaQuery.of(context).size.width;
     return Column(
       children: [
         Container(
           height: _height * 0.35,
-          width: MediaQuery.of(context).size.width,
+          width: _width,
           alignment: Alignment.bottomCenter,
           decoration: const BoxDecoration(
               image: DecorationImage(
@@ -25,7 +26,7 @@ class BandeauPromotion extends StatelessWidget {
                   fontWeight: FontWeight.bold)),
         ),
         SizedBox(
-            height: MediaQuery.of(context).size.height * 0.15,
+            height: _height * 0.15,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -37,7 +38,7 @@ class BandeauPromotion extends StatelessWidget {
                     textAlign: TextAlign.center),
                 Center(
                     child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.35,
+                  width: _width * 0.35,
                   child: ElevatedButton(
                       onPressed: () async {
                         const url = "https://launch.akt.io/";
